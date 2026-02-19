@@ -131,10 +131,29 @@ export default function InviteContent() {
 
 
         <form
-          action="https://formspree.io/f/mdallarw"
-          method="POST"
-          className="mt-4 rounded-2xl bg-white p-6 shadow-[0_14px_36px_rgba(0,0,0,0.10)]"
-        >
+  onSubmit={async (e) => {
+    e.preventDefault()
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    const response = await fetch("https://formspree.io/f/mdallarw", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+
+    if (response.ok) {
+      window.location.href = "/thank-you"
+    } else {
+      alert("Something went wrong. Please try again.")
+    }
+  }}
+  className="space-y-6"
+>
+
 
           {/* Subject */}
           <input
@@ -142,13 +161,6 @@ export default function InviteContent() {
             name="_subject"
             value={`New RSVP — ${wedding.couple}`}
           />
-
-          {/* Redirect after submit */}
-         <input
-            type="hidden"
-            name="_redirect"
-            value="https://wedding-invite-ten-silk.vercel.app/thank-you"
-            />
 
 
           {/* Spam trap */}
