@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --ivory: #EBE2CF;
   --plum: #481827;
@@ -6,11 +10,17 @@
   --orange: #AB482D;
 }
 
-html, body {
+html,
+body {
+  height: 100%;
+}
+
+body {
   background: var(--ivory);
   color: var(--plum);
 }
 
+/* Optional helper classes you can use anywhere */
 .invitation-container {
   max-width: 720px;
   margin: 0 auto;
