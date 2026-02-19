@@ -144,11 +144,12 @@ export default function InviteContent() {
           />
 
           {/* Redirect after submit */}
-          <input
+         <input
             type="hidden"
             name="_redirect"
-            value="http://localhost:3000/thank-you"
-          />
+            value="https://wedding-invite-ten-silk.vercel.app/thank-you"
+            />
+
 
           {/* Spam trap */}
           <input
