@@ -9,13 +9,8 @@ export default function Page() {
 
   return (
     <main>
-      {!opened && (
-        <EnvelopeIntro onOpen={() => setOpened(true)} />
-      )}
-
-      {opened && (
-        <InviteContent />
-      )}
+      {!opened && <EnvelopeIntro onOpen={() => setOpened(true)} />}
+      {opened && <InviteContent />}
     </main>
   )
 }
